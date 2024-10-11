@@ -16,8 +16,12 @@ async function getWeather(location) {
   }
 }
 
-const weatherData = await getWeather("45431");
-console.log("Weather: ");
-console.log(weatherData);
-const weather = new Weather(weatherData);
-console.log(weather);
+async function searchWeather() {
+  const locInput = document.querySelector("#search");
+  const weatherData = await getWeather(locInput.value);
+  const weather = new Weather(weatherData);
+  console.log(weather);
+}
+
+const searchBtn = document.querySelector("#searchBtn");
+searchBtn.addEventListener("click", searchWeather);
