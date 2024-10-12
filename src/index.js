@@ -1,3 +1,4 @@
+import "./style.css";
 import { Weather } from "./weather";
 
 async function getWeather(location) {
@@ -21,6 +22,18 @@ async function searchWeather() {
   const weatherData = await getWeather(locInput.value);
   const weather = new Weather(weatherData);
   console.log(weather);
+
+  const locDisp = document.querySelector("#loc");
+  locDisp.innerText = "Current Weather for " + weather.location;
+
+  const tempDisp = document.querySelector("#temp");
+  tempDisp.innerText = "Temperature: " + weather.temperature;
+
+  const humidityDisp = document.querySelector("#humidity");
+  humidityDisp.innerText = "Humidity: " + weather.humidity;
+
+  const windDisp = document.querySelector("#windspeed");
+  windDisp.innerText = "Windspeed: " + weather.windspeed;
 }
 
 const searchBtn = document.querySelector("#searchBtn");

@@ -3,10 +3,10 @@ class Weather {
     this.location = data.address;
     this.description = data.description;
     this.date = data.currentConditions.datetime;
-    this.temperature = data.currentConditions.datetime;
+    this.temperature = data.currentConditions.temp;
     this.humidity = data.currentConditions.humidity;
     this.windspeed = data.currentConditions.windspeed;
-    this.conditions = data.currentConditions.windspeed;
+    this.conditions = data.currentConditions.conditions;
   }
 }
 
